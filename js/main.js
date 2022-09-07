@@ -14,40 +14,18 @@ const videoPicture = document.querySelector('.video__picture');
 const videoWrapper = document.querySelector('.video');
 const video = document.querySelector('#video-file');
 
-
-
-
-videoBtn.addEventListener('click', function () {
-	videoPicture.classList.add('none');
-	videoWrapper.classList.remove('video-overlay');
-	videoBtn.classList.add('none');
-
-
-
+videoWrapper.addEventListener('click', function () {
 	if (video.paused) {
 		video.play()
-	}
-
-})
-
-
-video.addEventListener('click', function() {
-
-	if (video.paused) {
-		video.play();
-
+		videoPicture.classList.add('none');
+		videoWrapper.classList.remove('video-overlay');
+		videoBtn.classList.add('none');
 	} else {
 		videoWrapper.classList.add('video-overlay');
 		videoBtn.classList.remove('none');
 		video.pause();
 	}
-
-
-
 })
-
-
-
 
 
 // // Работаем с кнопкой видео
