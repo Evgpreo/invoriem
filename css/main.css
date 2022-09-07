@@ -1,0 +1,320 @@
+@import "reset.css";
+/*Подключаем шрифт*/
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import '/fonts/Gilroy/stylesheet.css';
+
+
+/*font-family: 'Work Sans', sans-serif;*/
+/*font-family: 'Gilroy', sans-serif;*/
+
+body {
+	font-family: 'Gilroy', sans-serif;
+	font-weight: 500;
+}
+
+/*2*/
+.container {
+	max-width: 1750px;
+	padding: 0 15px;
+/*	border: 3px solid green;*/
+/*	background-color: #86ca6b;*/
+	margin: 0 auto;
+}
+
+.container-right {
+	padding-left: calc((100% - 1750px) / 2 + 15px);
+}
+
+.btn {
+	position: relative;
+	display: inline-block; /*ширина блока зависит от контента внутри. если текста будет больше, то и кнопка будет больше*/
+	padding: 10px 24px;
+	padding-right: 72px;
+	border: 1px solid #114455;
+	border-radius: 2px;
+	font-size: 20px;
+	font-weight: 800;
+	color: #114455;
+/*Для того, чтобы при наведении ховер менялся плавно, добавляем для кнопки transition*/
+	transition: color 0.15s ease-in, background-color 0.15s ease-in;
+}
+
+/*Делаем стрелку внутри кнопки, через псевдоэлемент*/
+
+.btn::after {
+	content: "";
+	position: absolute;
+	width: 32px;
+	height: 32px;
+/*	background-color: red;*/
+	background-image: url(./../img/icons/arrow-right-black.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	right: 24px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.btn:hover, .btn:focus {
+	background-color: #114455;
+	color: #fff;
+}
+
+/*для того, чтобы кнопка при нажатии чуть проваливалась*/
+.btn:active {
+	top: 1px;
+}
+
+
+.btn:hover::after {
+	background-image: url(./../img/icons/arrow-right-white.svg);
+}
+
+
+.btn--big {
+	padding: 14px 32px;
+	padding-right: 80px;
+}
+
+.btn--dark {
+	background-color: #114455;
+	color: #fff;
+}
+
+.btn--dark:hover, .btn--dark:focus {
+	background-color: #1F1F1F;
+}
+
+
+
+.btn--dark::after {
+	background-image: url(./../img/icons/arrow-right-white.svg);
+
+}
+
+
+
+/*Header 1*/
+.header {
+	min-height: 100vh;
+	background-color: #E3EFF4;
+	background-image: url("./../img/header/header-bg.jpg");
+	background-size: cover;
+	background-position: center center;
+}
+
+/*3*/
+.header__top {
+	margin-bottom: 126px;
+	padding: 44px 0;
+/*	border: 1px solid red;
+	background-color: #ee8471;*/
+}
+
+/*Nav*/
+.nav {
+/*	background-color: #b87de5;*/
+	display: flex;
+	justify-content: space-between;
+
+}
+.nav__logo {
+}
+
+.nav__list {
+display: flex;
+align-items: center;
+column-gap: 118px;
+}
+
+.link {
+	color: #114455;
+	font-size: 20px;
+	font-weight: 800;
+}
+
+/*Header content*/
+
+.header__content {
+/*	border: 1px solid #de1fb6;*/
+	max-width: 1060px;
+}
+
+.header__title {
+	max-width: 734px;
+	font-weight: 800;
+	font-size: 80px;
+	color: #114455;
+	margin-bottom: 48px;
+}
+
+.header__text {
+	margin-bottom: 72px;
+	font-size: 34px;
+	color: #1F1F1F;
+}
+
+/*Работаем с абзацами, чтобы были отступы, если их будет более 1*/
+.header__text p + p {
+	margin-top: 1em;
+}
+
+/*Case studies*/
+
+.case-studies {
+
+	padding: 184px 0;
+}
+
+.case-studies__title {
+	margin-bottom: 12px;
+	max-width: 1070px;
+/*	border: 1px solid green;*/
+}
+
+.case-studies__text {
+	margin-bottom: 100px;
+	max-width: 1070px;
+}
+
+.title {
+	font-size: 80px;
+	font-weight: 800;
+	color: #1F1F1F;
+
+}
+
+/*пропорция размера шрифта и высоты строки*/
+.text {
+	font-size: 28px;
+	line-height: 1.57;
+	color: #1F1F1F;
+}
+
+.slider {
+
+}
+.slider__item {
+}
+
+/*Slide*/
+.slide {
+	position: relative;
+	display: inline-block;
+/*	background-color: #f48888;*/
+	padding-left: 80px;
+}
+
+/*делаем градиент для текста*/
+.slide__title {
+	position: absolute;
+	left: 0;
+	bottom: 104px;
+	font-size: 140px;
+	font-weight: 800;
+	background: linear-gradient(90deg, rgba(17,68,85,1) 80px, rgba(255,255,255,1) 80px);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/*Video section*/
+
+.about {
+	padding: 144px 0;
+}
+
+.about__title {
+	max-width: 1070px;
+	margin-bottom: 12px;
+}
+
+.about__text {
+	max-width: 1070px;
+	margin-bottom: 78px;
+
+}
+
+.about__content {
+
+}
+
+/*video*/
+
+.video {
+	position: relative;
+}
+
+.video-overlay::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(17, 68, 85, 0.5);
+}
+
+.video__btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 9;
+}
+
+.video__picture {
+	position: absolute;
+	left: 0;
+	top: 0;
+
+}
+
+.video__object {
+	width: 100%;
+
+}
+
+/* .none {
+  display: none;
+} */
+
+
+/*Footer*/
+
+.footer {
+	padding: 162px 0 82px;
+	color: rgba(31, 31, 31, 0.7);
+	font-size: 20px;
+	line-height: 36px;
+	letter-spacing: 0.04em;
+}
+
+/*работаем с ссылкой для почты*/
+
+.footer a {
+	color: rgba(31, 31, 31, 0.7);
+	opacity: 0.9;
+	font-size: 20px;
+	line-height: 36px;
+	letter-spacing: 0.04em;
+}
+
+.footer__row {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+
+.footer__nav {
+	display: flex;
+	column-gap: 104px;
+}
+.footer__email {
+
+}
+
+.footer__social {
+	display: flex;
+	column-gap: 26px;
+}
